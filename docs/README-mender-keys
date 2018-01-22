@@ -4,14 +4,14 @@ openssl rsa -in private.key -out private.key
 
 openssl rsa -in private.key -out public.key -pubout
 
-~/wandboard/mender-keys$ ls -l
+~/odroid-c2/mender-keys$ ls -l
 total 8
 -rw-rw-r-- 1 scott scott 2459 Jan 15 05:26 private.key
 -rw-rw-r-- 1 scott scott  625 Jan 15 05:26 public.key
 
 The public key gets copied to
 
-  meta-wandboard/recipes-mender/mender/files/artifact-verify-key.pem
+  meta-odroid-c2/recipes-mender/mender/files/artifact-verify-key.pem
 
 to be installed on the devices.
 
@@ -19,4 +19,4 @@ The private key is used to sign the artifacts with the mender-artifact tool.
 
 See the script
 
-  meta-wandboard/scripts/sign-mender-image.sh
+  meta-odroid-c2/scripts/sign-mender-image.sh
