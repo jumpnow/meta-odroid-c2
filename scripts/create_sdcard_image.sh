@@ -7,45 +7,45 @@ IMG=console
 IMG_LONG="${IMG}-image-${MACHINE}"
 
 if [ ! -d /media/card ]; then
-        echo "Temporary mount point [/media/card] not found"
-        exit 1
+    echo "Temporary mount point [/media/card] not found"
+    exit 1
 fi
 
 if [ "x${1}" = "x" ]; then
-	CARDSIZE=2
+    CARDSIZE=2
 else
-	if [ "${1}" -eq 1 ]; then
-		CARDSIZE=1
-	elif [ "${1}" -eq 2 ]; then
-		CARDSIZE=2
-	elif [ "${1}" -eq 4 ]; then
-		CARDSIZE=4
-	else
-		echo "Unsupported card size: ${1}"
-		exit 1
-	fi
+    if [ "${1}" -eq 1 ]; then
+        CARDSIZE=1
+    elif [ "${1}" -eq 2 ]; then
+        CARDSIZE=2
+    elif [ "${1}" -eq 4 ]; then
+        CARDSIZE=4
+    else
+        echo "Unsupported card size: ${1}"
+        exit 1
+    fi
 fi
 
 if [ -z "${OETMP}" ]; then
-	echo "OETMP environment variable not set"
-	exit 1
+    echo "OETMP environment variable not set"
+    exit 1
 fi
 
 SRCDIR=${OETMP}/deploy/images/${MACHINE}
 
 if [ ! -f "${SRCDIR}/${IMG_LONG}.tar.xz" ]; then
-	echo "File not found: ${SRCDIR}/${IMG_LONG}.tar.xz"
-	exit 1
+    echo "File not found: ${SRCDIR}/${IMG_LONG}.tar.xz"
+    exit 1
 fi
 
 SDIMG=wand-${IMG}-${CARDSIZE}gb.img
 
 if [ -f "${DSTDIR}/${SDIMG}" ]; then
-	rm ${DSTDIR}/${SDIMG}
+    rm ${DSTDIR}/${SDIMG}
 fi
 
 if [ -f "${DSTDIR}/${SDIMG}.xz" ]; then
-	rm -f ${DSTDIR}/${SDIMG}.xz*
+    rm -f ${DSTDIR}/${SDIMG}.xz*
 fi
 
 echo -e "\n***** Creating the loop device *****"
@@ -67,8 +67,8 @@ DEV=${LOOPDEV}
 ./copy_boot.sh ${DEV}
 
 if [ $? -ne 0 ]; then
-	sudo losetup -D
-	exit
+    sudo losetup -D
+    exit
 fi
 
 echo "***** Copying the rootfs *****"
@@ -76,8 +76,8 @@ DEV=${LOOPDEV}p1
 ./copy_rootfs.sh ${DEV} ${IMG} ${HOSTNAME}
 
 if [ $? -ne 0 ]; then
-	sudo losetup -D
-	exit
+    sudo losetup -D
+    exit
 fi
 
 echo "***** Detatching loop device *****"
