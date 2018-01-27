@@ -18,4 +18,5 @@ SRCREV = "a16134b082346b7e7c34f594a0763eafacdcea92"
 SRC_URI = " \
     git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-${LINUX_VERSION}.y \
     file://defconfig \
+    file://0001-Set-eMMC-maximum-frequency-to-100MHz.patch \
 "
