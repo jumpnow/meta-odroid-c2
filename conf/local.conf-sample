@@ -16,6 +16,9 @@ PREFERRED_PROVIDER_udev = "eudev"
 
 MACHINE = "odroid-c2"
 
+# uncomment if using the eMMC, changes boot.scr
+# EMMC_BOOT = "1"
+
 #DL_DIR = "${HOME}/oe-sources"
 #SSTATE_DIR = "/oe9/oc2/sstate-cache"
 #TMPDIR = "/oe9/oc2/tmp-rocko"
