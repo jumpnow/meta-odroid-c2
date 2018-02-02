@@ -2,19 +2,17 @@ This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
     branch: rocko
-    revision: HEAD
-    commit: a03c452
+    commit: 21ba45a
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: rocko
-    revision: HEAD
-    commit: 6e3fc5b
+    commit: a65c1ac
 
 If using mender
 
     URI: git://github.com/mendersoftware/meta-mender
     branch: rocko
-    revision: HEAD
-    commit: 7c187e3
+    commit: b1962c3
+
     
-    meta-odroid-c2 layer maintainer: Scott Ellis <scott@jumpnowtek.com>
+meta-odroid-c2 layer maintainer: Scott Ellis <scott@jumpnowtek.com>
