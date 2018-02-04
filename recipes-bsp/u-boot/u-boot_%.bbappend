@@ -13,6 +13,7 @@ SRC_URI += " \
     file://odroid-c2/bl301.bin \
     file://odroid-c2/bl30.bin \
     file://odroid-c2/bl31.bin \
+    file://0001-Add-default-bootargs.patch \
 "
 
 do_compile_append () {
