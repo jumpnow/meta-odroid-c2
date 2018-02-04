@@ -1,0 +1,58 @@
+# Local configuration for meta-odroid-c2 images
+# Yocto Project 2.4 Poky distribution [rocko] branch
+# This is a sysvinit system
+
+LICENSE_FLAGS_WHITELIST = "commercial"
+
+DISTRO_FEATURES = "ext2 usbhost ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio opengl"
+PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
+PREFERRED_PROVIDER_udev = "eudev"
+
+MACHINE = "odroid-c2"
+KERNEL_DEVICETREE = "amlogic/meson-gxbb-odroidc2.dtb"
+
+# use eMMC instead of SD card, changes boot.scr
+# N/A for mender systems that don't use a boot script
+#EMMC_BOOT = "1"
+
+DL_DIR = "${HOME}/oe-sources"
+SSTATE_DIR = "/oe9/oc2m/sstate-cache"
+TMPDIR = "/oe9/oc2m/tmp-rocko"
+
+DISTRO = "poky"
+PACKAGE_CLASSES = "package_ipk"
+SDKMACHINE = "x86_64"
+
+EXTRA_IMAGE_FEATURES = "debug-tweaks"
+#INHERIT += "extrausers"
+#EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
+
+USER_CLASSES = "image-mklibs image-prelink"
+PATCHRESOLVE = "noop"
+INHERIT += "rm_work"
+RM_OLD_IMAGE = "1"
+CONF_VERSION = "1"
+
+# mender stuff
+MENDER_ARTIFACT_NAME = "oc2-t2"
+INHERIT += "mender-image mender-install mender-uboot"
+MENDER_SERVER_URL = "https://fractal.jumpnow"
+
+MENDER_UBOOT_STORAGE_INTERFACE = "mmc"
+
+# for eMMC systems
+MENDER_UBOOT_STORAGE_DEVICE = "1"
+MENDER_STORAGE_DEVICE = "/dev/mmcblk0"
+
+# for SD card systems
+#MENDER_UBOOT_STORAGE_DEVICE = "0"
+#MENDER_STORAGE_DEVICE = "/dev/mmcblk1"
+
+IMAGE_ROOTFS_SIZE = "1048576"
+MENDER_STORAGE_TOTAL_SIZE_MB = "3360"
+MENDER_PARTITION_ALIGNMENT_KB = "4096"
+MENDER_BOOT_PART_SIZE_MB = "8"
+MENDER_DATA_PART_SIZE_MB = "1280"
+MENDER_UBOOT_ENV_STORAGE_DEVICE_OFFSET_1 = "0x400000"
+MENDER_UBOOT_ENV_STORAGE_DEVICE_OFFSET_2 = "0x600000"
