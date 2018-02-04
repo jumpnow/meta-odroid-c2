@@ -12,6 +12,10 @@ CORE_OS = " \
     tzdata \
 "
 
+KERNEL_EXTRA_INSTALL = " \
+    kernel-modules \
+"
+
 DEV_EXTRAS = " \
     ntp \
     ntp-tickadj \
@@ -45,8 +49,19 @@ IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
+    ${KERNEL_EXTRA_INSTALL} \
     ${MENDER_EXTRA} \
 "
+
+IMAGE_FILE_BLACKLIST += " \
+    /etc/init.d/hwclock.sh \
+ "
+
+remove_blacklist_files() {
+    for i in ${IMAGE_FILE_BLACKLIST}; do
+        rm -rf ${IMAGE_ROOTFS}$i
+    done
+}
 
 set_local_timezone() {
     ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
@@ -57,6 +72,7 @@ disable_bootlogd() {
 }
 
 ROOTFS_POSTPROCESS_COMMAND += " \
+    remove_blacklist_files ; \
     set_local_timezone ; \
     disable_bootlogd ; \
  "
