@@ -111,7 +111,6 @@ echo "***** Creating the loop device *****"
 loopdev=`losetup -f`
 
 echo "***** Creating an empty SD image file *****"
-#dd if=/dev/zero of=${dstdir}/${sdimg} bs=1G count=${cardsize}
 dd if=/dev/zero of=${dstdir}/${sdimg} bs=512 count=${total_sectors}
 
 
