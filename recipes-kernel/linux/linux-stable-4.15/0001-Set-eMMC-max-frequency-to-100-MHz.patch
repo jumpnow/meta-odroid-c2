@@ -1,0 +1,25 @@
+From 888345393c5f791f2fa0e4e768652899a11db359 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Mon, 19 Feb 2018 15:26:05 -0500
+Subject: [PATCH] Set eMMC max frequency to 100 MHz
+
+---
+ arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
+index f8d2214..c367466 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
+@@ -278,7 +278,7 @@
+ 	pinctrl-names = "default", "clk-gate";
+ 
+ 	bus-width = <8>;
+-	max-frequency = <200000000>;
++	max-frequency = <100000000>;
+ 	non-removable;
+ 	disable-wp;
+ 	cap-mmc-highspeed;
+-- 
+2.7.4
+
