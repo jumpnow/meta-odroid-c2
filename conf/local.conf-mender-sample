@@ -9,6 +9,8 @@ DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio opengl"
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_udev = "eudev"
 
+PREFERRED_VERSION_linux-stable = "4.14.%"
+
 MACHINE = "odroid-c2"
 KERNEL_DEVICETREE = "amlogic/meson-gxbb-odroidc2.dtb"
 
