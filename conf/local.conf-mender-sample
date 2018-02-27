@@ -18,9 +18,9 @@ KERNEL_DEVICETREE = "amlogic/meson-gxbb-odroidc2.dtb"
 # N/A for mender systems that don't use a boot script
 #EMMC_BOOT = "1"
 
-DL_DIR = "${HOME}/oe-sources"
-SSTATE_DIR = "/oe9/oc2m/sstate-cache"
-TMPDIR = "/oe9/oc2m/tmp-rocko"
+#DL_DIR = "${HOME}/oe-sources"
+#SSTATE_DIR = "/oe9/oc2m/sstate-cache"
+#TMPDIR = "/oe9/oc2m/tmp-rocko"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
@@ -39,7 +39,7 @@ CONF_VERSION = "1"
 # mender stuff
 MENDER_ARTIFACT_NAME = "oc2-t2"
 INHERIT += "mender-image mender-install mender-uboot"
-MENDER_SERVER_URL = "https://fractal.jumpnow"
+MENDER_SERVER_URL = "https://<server>"
 
 MENDER_UBOOT_STORAGE_INTERFACE = "mmc"
 
