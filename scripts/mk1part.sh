@@ -48,7 +48,7 @@ fi
 echo -e "\nOkay, here we go ...\n"
 
 echo -e "=== Zeroing the MBR ===\n"
-dd if=/dev/zero of=$DEV bs=1024 count=1024
+dd if=/dev/zero of=$DEV bs=1M count=16
 
 # Create 1 partition
 # Sectors are 512 bytes
