@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 4.14.14 Kernel Configuration
+# Linux/arm64 4.14.40 Kernel Configuration
 #
 CONFIG_ARM64=y
 CONFIG_64BIT=y
@@ -471,6 +471,7 @@ CONFIG_CAVIUM_ERRATUM_30115=y
 CONFIG_QCOM_FALKOR_ERRATUM_1003=y
 CONFIG_QCOM_FALKOR_ERRATUM_1009=y
 CONFIG_QCOM_QDF2400_ERRATUM_0065=y
+# CONFIG_QCOM_FALKOR_ERRATUM_E1041 is not set
 CONFIG_ARM64_4K_PAGES=y
 # CONFIG_ARM64_16K_PAGES is not set
 # CONFIG_ARM64_64K_PAGES is not set
@@ -542,6 +543,7 @@ CONFIG_CMA_AREAS=7
 # CONFIG_ZSMALLOC is not set
 CONFIG_GENERIC_EARLY_IOREMAP=y
 # CONFIG_IDLE_PAGE_TRACKING is not set
+CONFIG_FRAME_VECTOR=y
 # CONFIG_PERCPU_STATS is not set
 CONFIG_SECCOMP=y
 CONFIG_PARAVIRT=y
@@ -551,6 +553,8 @@ CONFIG_KEXEC=y
 CONFIG_XEN_DOM0=y
 CONFIG_XEN=y
 CONFIG_FORCE_MAX_ZONEORDER=11
+CONFIG_UNMAP_KERNEL_AT_EL0=y
+CONFIG_HARDEN_BRANCH_PREDICTOR=y
 # CONFIG_ARMV8_DEPRECATED is not set
 # CONFIG_ARM64_SW_TTBR0_PAN is not set
 
@@ -2510,21 +2514,51 @@ CONFIG_MEDIA_SUPPORT=m
 #
 # Multimedia core support
 #
-# CONFIG_MEDIA_CAMERA_SUPPORT is not set
+CONFIG_MEDIA_CAMERA_SUPPORT=y
 # CONFIG_MEDIA_ANALOG_TV_SUPPORT is not set
 # CONFIG_MEDIA_DIGITAL_TV_SUPPORT is not set
 # CONFIG_MEDIA_RADIO_SUPPORT is not set
 # CONFIG_MEDIA_SDR_SUPPORT is not set
 CONFIG_MEDIA_CEC_SUPPORT=y
+# CONFIG_MEDIA_CONTROLLER is not set
+CONFIG_VIDEO_DEV=m
+CONFIG_VIDEO_V4L2=m
 # CONFIG_VIDEO_ADV_DEBUG is not set
 # CONFIG_VIDEO_FIXED_MINOR_RANGES is not set
+CONFIG_VIDEOBUF2_CORE=m
+CONFIG_VIDEOBUF2_MEMOPS=m
+CONFIG_VIDEOBUF2_VMALLOC=m
 # CONFIG_TTPCI_EEPROM is not set
 
 #
 # Media drivers
 #
-# CONFIG_MEDIA_USB_SUPPORT is not set
+CONFIG_MEDIA_USB_SUPPORT=y
+
+#
+# Webcam devices
+#
+CONFIG_USB_VIDEO_CLASS=m
+CONFIG_USB_VIDEO_CLASS_INPUT_EVDEV=y
+# CONFIG_USB_GSPCA is not set
+# CONFIG_USB_PWC is not set
+# CONFIG_VIDEO_CPIA2 is not set
+# CONFIG_USB_ZR364XX is not set
+# CONFIG_USB_STKWEBCAM is not set
+# CONFIG_USB_S2255 is not set
+
+#
+# Webcam, TV (analog/digital) USB devices
+#
+# CONFIG_VIDEO_EM28XX is not set
+
+#
+# USB HDMI CEC adapters
+#
 # CONFIG_MEDIA_PCI_SUPPORT is not set
+# CONFIG_V4L_PLATFORM_DRIVERS is not set
+# CONFIG_V4L_MEM2MEM_DRIVERS is not set
+# CONFIG_V4L_TEST_DRIVERS is not set
 CONFIG_CEC_PLATFORM_DRIVERS=y
 CONFIG_VIDEO_MESON_AO_CEC=m
 
@@ -2536,9 +2570,54 @@ CONFIG_VIDEO_MESON_AO_CEC=m
 #
 # Media ancillary drivers (tuners, sensors, i2c, spi, frontends)
 #
+CONFIG_MEDIA_SUBDRV_AUTOSELECT=y
 
 #
-# Customise DVB Frontends
+# Audio decoders, processors and mixers
+#
+
+#
+# RDS decoders
+#
+
+#
+# Video decoders
+#
+
+#
+# Video and audio decoders
+#
+
+#
+# Video encoders
+#
+
+#
+# Camera sensor devices
+#
+
+#
+# Flash devices
+#
+
+#
+# Video improvement chips
+#
+
+#
+# Audio/Video compression chips
+#
+
+#
+# SDR tuner chips
+#
+
+#
+# Miscellaneous helper chips
+#
+
+#
+# Sensors used on soc_camera driver
 #
 
 #
@@ -4399,6 +4478,7 @@ CONFIG_CRYPTO_RNG2=y
 CONFIG_CRYPTO_RNG_DEFAULT=y
 CONFIG_CRYPTO_AKCIPHER2=y
 CONFIG_CRYPTO_KPP2=y
+CONFIG_CRYPTO_KPP=m
 CONFIG_CRYPTO_ACOMP2=y
 # CONFIG_CRYPTO_RSA is not set
 # CONFIG_CRYPTO_DH is not set
