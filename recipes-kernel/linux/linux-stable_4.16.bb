@@ -18,4 +18,5 @@ SRCREV = "dec316ea18281d2892324a4bfeb4d5a8a6605e69"
 SRC_URI = " \
     git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-${LINUX_VERSION}.y \
     file://defconfig \
+    file://0001-Revert-arm64-Add-work-around-for-Arm-Cortex-A55-Erra.patch \
 "
