@@ -2,8 +2,6 @@ require recipes-kernel/linux/linux-yocto.inc
 
 COMPATIBLE_MACHINE = "odroid-c2"
 
-RDEPENDS_kernel-base += "kernel-devicetree"
-
 KERNEL_DEVICETREE ?= "amlogic/meson-gxbb-odroidc2.dtb"
 
 LINUX_VERSION = "4.16"

@@ -1,5 +1,5 @@
 # Local configuration for meta-odroid-c2 images
-# Yocto Project 2.4 Poky distribution [rocko] branch
+# Yocto Project 2.5 Poky distribution [sumo] branch
 # This is a sysvinit system
 
 BBMASK = "meta-odroid-c2/recipes-mender"
@@ -14,32 +14,31 @@ PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 
 PREFERRED_PROVIDER_udev = "eudev"
 
+# the default kernel is 4.16
 #PREFERRED_VERSION_linux-stable = "4.14.%"
 
 MACHINE = "odroid-c2"
 
-# uncomment if using the eMMC, changes boot.scr
+# use eMMC instead of SD card, changes boot.scr
 # EMMC_BOOT = "1"
 
 #DL_DIR = "${HOME}/oe-sources"
-#SSTATE_DIR = "/oe9/oc2/sstate-cache"
-#TMPDIR = "/oe9/oc2/tmp-rocko"
+#SSTATE_DIR = "/oe6/oc2/sstate-cache"
+#TMPDIR = "/oe6/oc2/tmp-sumo"
 
 DISTRO = "poky"
-
 PACKAGE_CLASSES = "package_ipk"
-
 SDKMACHINE = "x86_64"
 
-# for an empty root password
+# for empty root password
 #EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
-# to set a root password
+# to set a root password of 'jumpnowtek'
 INHERIT += "extrausers"
 EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 
-
 USER_CLASSES = "image-mklibs image-prelink"
+
 PATCHRESOLVE = "noop"
 INHERIT += "rm_work"
 RM_OLD_IMAGE = "1"
