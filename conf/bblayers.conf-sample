@@ -12,6 +12,5 @@ BBLAYERS ?= " \
   ${HOME}/poky-sumo/meta-openembedded/meta-networking \
   ${HOME}/poky-sumo/meta-openembedded/meta-python \
   ${HOME}/poky-sumo/meta-qt5 \
-  ${HOME}/syntro/meta-syntro \
   ${HOME}/odroid-c2/meta-odroid-c2 \
 "
