@@ -26,20 +26,27 @@ DEV_SDK_INSTALL = " \
     cpp \
     cpp-symlinks \
     diffutils \
+    elfutils \
     file \
     gcc \
     gcc-symlinks \
     g++ \
     g++-symlinks \
+    gdb \
     gettext \
     git \
     ldd \
     libstdc++ \
     libstdc++-dev \
     libtool \
+    ltrace \
     make \
+    nasm \
+    perl-modules \
     pkgconfig \
+    python-modules \
     python3-modules \
+    strace \
 "
 
 DEV_EXTRAS = " \
@@ -50,20 +57,25 @@ DEV_EXTRAS = " \
 
 EXTRA_TOOLS_INSTALL = " \
     bzip2 \
+    curl \
+    dosfstools \
+    e2fsprogs-mke2fs \
     ethtool \
     fbset \
     findutils \
     i2c-tools \
     iperf3 \
     iproute2 \
+    iptables \
     less \
-    memtester \
     netcat \
+    parted \
     procps \
-    rsync \
+    root-upgrader \
     sysfsutils \
     tcpdump \
     util-linux \
+    util-linux-blkid \
     unzip \
     wget \
     zip \
