@@ -14,13 +14,15 @@ PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 
 PREFERRED_PROVIDER_udev = "eudev"
 
-# the default kernel is 4.16
+# the default kernel is 4.18
 #PREFERRED_VERSION_linux-stable = "4.14.%"
 
 MACHINE = "odroid-c2"
 
-# use eMMC instead of SD card, changes boot.scr
+# use eMMC instead of SD card (changes boot.scr)
 # EMMC_BOOT = "1"
+# to use the root upgrader with the SD card (changes boot.scr)
+# SD_UPGRADER_BOOT = "1"
 
 #DL_DIR = "${HOME}/oe-sources"
 #SSTATE_DIR = "/oe6/oc2/sstate-cache"
