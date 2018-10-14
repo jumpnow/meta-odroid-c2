@@ -14,6 +14,7 @@ SRC_URI += " \
     file://odroid-c2/bl30.bin \
     file://odroid-c2/bl31.bin \
     file://0001-Add-default-bootargs.patch \
+    file://0002-Add-FAT-write-support.patch \
 "
 
 do_compile_append () {

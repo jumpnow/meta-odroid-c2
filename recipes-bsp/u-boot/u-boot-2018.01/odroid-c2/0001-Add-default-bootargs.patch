@@ -1,14 +1,14 @@
-From 8d5178f7b7b42da594c4e00ce635182735bc5258 Mon Sep 17 00:00:00 2001
+From 12965585194d1e2321d50ad4a1192152b4ce0c83 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Sun, 4 Feb 2018 04:01:51 -0500
-Subject: [PATCH] Add default bootargs
+Subject: [PATCH 1/2] Add default bootargs
 
 ---
  include/configs/meson-gxbb-common.h | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/include/configs/meson-gxbb-common.h b/include/configs/meson-gxbb-common.h
-index d88d42d..a28c3ec 100644
+index c2b306a..e96463f 100644
 --- a/include/configs/meson-gxbb-common.h
 +++ b/include/configs/meson-gxbb-common.h
 @@ -40,6 +40,7 @@
