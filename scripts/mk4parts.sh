@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Create 1 partition for a Odroid-C2
-#
+# Create 4 partitions for a Odroid-C2 O/S
+# Used with sysupgrader
 
 function ver() {
         printf "%03d%03d%03d" $(echo "$1" | tr '.' ' ')
@@ -50,14 +50,20 @@ echo -e "\nOkay, here we go ...\n"
 echo -e "=== Zeroing the MBR ===\n"
 dd if=/dev/zero of=$DEV bs=1M count=16
 
-# Create 1 partition
+# Create 4 partitions
 # Sectors are 512 bytes
 # 0-8191: 4MB Not formatted, u-boot
-# 8192-end: Linux partition, rootfs
+# 8192, 1GB: Linux partition, rootfs 1
+# 1GB: Linux partition, rootfs 2
+# 64M: FAT partition for flags
+# Remainder of device: Linux partition
 
-echo -e "\n=== Creating 1 partition ===\n"
+echo -e "\n=== Creating 4 partitions ===\n"
 {
-echo 8192,,0x83,*
+echo 8192,2097152,0x83,-
+echo 2105344,2097152,0x83,-
+echo 4202496,131072,0x0C,-
+echo 4333568,+,0x83,-
 } | $SFDISK_CMD $DEV
 
 
