@@ -107,10 +107,15 @@ disable_bootlogd() {
     echo BOOTLOGD_ENABLE=no > ${IMAGE_ROOTFS}/etc/default/bootlogd
 }
 
+create_opt_dir() {
+    mkdir -p ${IMAGE_ROOTFS}/opt
+}
+
 ROOTFS_POSTPROCESS_COMMAND += " \
     remove_blacklist_files ; \
     set_local_timezone ; \
     disable_bootlogd ; \
- "
+    create_opt_dir ; \
+"
 
 export IMAGE_BASENAME = "console-image"
