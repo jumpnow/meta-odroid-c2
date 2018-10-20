@@ -10,10 +10,13 @@ SRC_URI = " \
     file://sd-boot.cmd \
     file://emmc-boot.cmd \
     file://sd-upgrader-boot.cmd \
+    file://emmc-upgrader-boot.cmd \
 "
 
 do_compile() {
-    if [ -n "${EMMC_BOOT}" ]; then
+    if [ -n "${EMMC_UPGRADER_BOOT}" ]; then
+        mkimage -A arm -T script -C none -n "Boot script" -d "${WORKDIR}/emmc-upgrader-boot.cmd" boot.scr
+    elif [ -n "${EMMC_BOOT}" ]; then
         mkimage -A arm -T script -C none -n "Boot script" -d "${WORKDIR}/emmc-boot.cmd" boot.scr
     elif [ -n "${SD_UPGRADER_BOOT}" ]; then
         mkimage -A arm -T script -C none -n "Boot script" -d "${WORKDIR}/sd-upgrader-boot.cmd" boot.scr
