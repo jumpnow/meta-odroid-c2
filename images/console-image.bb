@@ -71,6 +71,7 @@ EXTRA_TOOLS_INSTALL = " \
     parted \
     procps \
     root-upgrader \
+    rng-tools \
     sysfsutils \
     tcpdump \
     util-linux \
