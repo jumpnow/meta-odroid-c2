@@ -1,4 +1,4 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/u-boot-2018.01:"
+FILESEXTRAPATHS_prepend := "${THISDIR}/u-boot-2018.07:"
 
 COMPATIBLE_MACHINE = "odroid-c2"
 
@@ -13,8 +13,7 @@ SRC_URI += " \
     file://odroid-c2/bl301.bin \
     file://odroid-c2/bl30.bin \
     file://odroid-c2/bl31.bin \
-    file://0001-Add-default-bootargs.patch \
-    file://0002-Add-FAT-write-support.patch \
+    file://0001-Add-FAT-write-support.patch \
 "
 
 do_compile_append () {
@@ -36,4 +35,3 @@ do_compile_append () {
 
     dd if=${B}/${UBOOT_BINARY}.tmp of=${B}/${UBOOT_BINARY} bs=512 skip=96
 }
-

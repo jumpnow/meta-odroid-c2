@@ -1,6 +1,5 @@
 SUMMARY = "A console development image with some C/C++ dev tools"
 HOMEPAGE = "http://www.jumpnowtek.com"
-LICENSE = "MIT"
 
 IMAGE_FEATURES += "package-management"
 IMAGE_LINGUAS = "en-us"

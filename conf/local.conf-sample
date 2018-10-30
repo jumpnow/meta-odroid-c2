@@ -1,8 +1,6 @@
 # Local configuration for meta-odroid-c2 images
-# Yocto Project 2.5 Poky distribution [sumo] branch
+# Yocto Project 2.6 Poky distribution [thud] branch
 # This is a sysvinit system
-
-BBMASK = "meta-odroid-c2/recipes-mender"
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
@@ -26,7 +24,7 @@ MACHINE = "odroid-c2"
 
 #DL_DIR = "${HOME}/oe-sources"
 #SSTATE_DIR = "/oe6/oc2/sstate-cache"
-#TMPDIR = "/oe6/oc2/tmp-sumo"
+#TMPDIR = "/oe6/oc2/tmp-thud"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
