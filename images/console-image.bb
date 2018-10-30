@@ -70,8 +70,8 @@ EXTRA_TOOLS_INSTALL = " \
     netcat \
     parted \
     procps \
-    root-upgrader \
     rng-tools \
+    root-upgrader \
     sysfsutils \
     tcpdump \
     util-linux \
