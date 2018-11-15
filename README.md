@@ -13,6 +13,6 @@ Latest commits:
 
     poky eddff2b
     meta-openembedded f1511d2
-    meta-qt5 5832bf2
+    meta-qt5 fd1f0f4
 
 meta-odroid-c2 layer maintainer: Scott Ellis <scott@jumpnowtek.com>
