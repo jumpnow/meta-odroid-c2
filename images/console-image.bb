@@ -47,12 +47,6 @@ DEV_SDK_INSTALL = " \
     strace \
 "
 
-DEV_EXTRAS = " \
-    ntp \
-    ntp-tickadj \
-    serialecho \
-"
-
 EXTRA_TOOLS_INSTALL = " \
     bzip2 \
     curl \
@@ -61,6 +55,7 @@ EXTRA_TOOLS_INSTALL = " \
     ethtool \
     fbset \
     findutils \
+    firewall \
     i2c-tools \
     iperf3 \
     iproute2 \
@@ -68,6 +63,7 @@ EXTRA_TOOLS_INSTALL = " \
     less \
     netcat \
     nmap \
+    ntp ntp-tickadj \
     parted \
     procps \
     rndaddtoentcnt \
@@ -85,7 +81,6 @@ EXTRA_TOOLS_INSTALL = " \
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${DEV_SDK_INSTALL} \
-    ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
 "
