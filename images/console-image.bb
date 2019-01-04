@@ -56,6 +56,7 @@ EXTRA_TOOLS_INSTALL = " \
     fbset \
     findutils \
     firewall \
+    grep \
     i2c-tools \
     iperf3 \
     iproute2 \
