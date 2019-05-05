@@ -1,4 +1,4 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/u-boot-2018.07:"
+FILESEXTRAPATHS_prepend := "${THISDIR}/u-boot-2019.01:"
 
 COMPATIBLE_MACHINE = "odroid-c2"
 

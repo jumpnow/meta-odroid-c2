@@ -1,5 +1,5 @@
 # Local configuration for meta-odroid-c2 images
-# Yocto Project 2.6 Poky distribution [thud] branch
+# Yocto Project 2.7 Poky distribution [warrior] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -12,8 +12,8 @@ PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 
 PREFERRED_PROVIDER_udev = "eudev"
 
-# the default kernel is 4.19
-#PREFERRED_VERSION_linux-stable = "4.14.%"
+# the default kernel is 5.0 
+#PREFERRED_VERSION_linux-stable = "4.19.%"
 
 MACHINE = "odroid-c2"
 
@@ -24,7 +24,7 @@ MACHINE = "odroid-c2"
 
 #DL_DIR = "${HOME}/oe-sources"
 #SSTATE_DIR = "/oe6/oc2/sstate-cache"
-#TMPDIR = "/oe6/oc2/tmp-thud"
+#TMPDIR = "/oe6/oc2/tmp-warrior"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
