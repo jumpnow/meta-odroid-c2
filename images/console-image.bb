@@ -18,6 +18,11 @@ KERNEL_EXTRA_INSTALL = " \
     u-boot-scr \
 "
 
+WIREGUARD = " \
+    wireguard-module \
+    wireguard-tools \
+"
+
 DEV_SDK_INSTALL = " \
     binutils \
     binutils-symlinks \
@@ -86,6 +91,7 @@ IMAGE_INSTALL += " \
     ${DEV_SDK_INSTALL} \
     ${EXTRA_TOOLS_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
+    ${WIREGUARD} \
 "
 
 IMAGE_FILE_BLACKLIST += " \
