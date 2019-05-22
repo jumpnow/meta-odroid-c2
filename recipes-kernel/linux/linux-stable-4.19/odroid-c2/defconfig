@@ -1,13 +1,13 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 4.19.4 Kernel Configuration
+# Linux/arm64 4.19.43 Kernel Configuration
 #
 
 #
-# Compiler: aarch64-poky-linux-gcc (GCC) 8.2.0
+# Compiler: aarch64-poky-linux-gcc (GCC) 8.3.0
 #
 CONFIG_CC_IS_GCC=y
-CONFIG_GCC_VERSION=80200
+CONFIG_GCC_VERSION=80300
 CONFIG_CLANG_VERSION=0
 CONFIG_IRQ_WORK=y
 CONFIG_BUILDTIME_EXTABLE_SORT=y
@@ -811,7 +811,8 @@ CONFIG_IP_ROUTE_CLASSID=y
 CONFIG_NET_IP_TUNNEL=m
 # CONFIG_IP_MROUTE is not set
 CONFIG_SYN_COOKIES=y
-# CONFIG_NET_FOU is not set
+CONFIG_NET_UDP_TUNNEL=m
+CONFIG_NET_FOU=m
 # CONFIG_NET_FOU_IP_TUNNELS is not set
 # CONFIG_INET_AH is not set
 # CONFIG_INET_ESP is not set
@@ -846,6 +847,7 @@ CONFIG_IPV6_SIT=m
 # CONFIG_IPV6_SIT_6RD is not set
 CONFIG_IPV6_NDISC_NODETYPE=y
 # CONFIG_IPV6_TUNNEL is not set
+CONFIG_IPV6_FOU=m
 # CONFIG_IPV6_MULTIPLE_TABLES is not set
 # CONFIG_IPV6_MROUTE is not set
 # CONFIG_IPV6_SEG6_LWTUNNEL is not set
@@ -1531,6 +1533,8 @@ CONFIG_NET_CORE=y
 # CONFIG_MACVLAN is not set
 # CONFIG_IPVLAN is not set
 # CONFIG_VXLAN is not set
+# CONFIG_GENEVE is not set
+# CONFIG_GTP is not set
 # CONFIG_MACSEC is not set
 # CONFIG_NETCONSOLE is not set
 # CONFIG_TUN is not set
@@ -1924,6 +1928,7 @@ CONFIG_LEGACY_PTY_COUNT=16
 # CONFIG_NOZOMI is not set
 # CONFIG_N_GSM is not set
 # CONFIG_TRACE_SINK is not set
+CONFIG_LDISC_AUTOLOAD=y
 CONFIG_DEVMEM=y
 
 #
@@ -1991,7 +1996,6 @@ CONFIG_HW_RANDOM=y
 # CONFIG_HW_RANDOM_VIRTIO is not set
 CONFIG_HW_RANDOM_MESON=y
 # CONFIG_HW_RANDOM_CAVIUM is not set
-# CONFIG_R3964 is not set
 # CONFIG_APPLICOM is not set
 
 #
@@ -3288,6 +3292,7 @@ CONFIG_USB_SNP_UDC_PLAT=y
 # CONFIG_USB_DUMMY_HCD is not set
 # CONFIG_USB_CONFIGFS is not set
 # CONFIG_TYPEC is not set
+# CONFIG_USB_ROLE_SWITCH is not set
 # CONFIG_USB_LED_TRIG is not set
 CONFIG_USB_ULPI_BUS=y
 # CONFIG_UWB is not set
