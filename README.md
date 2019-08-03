@@ -1,22 +1,22 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: warrior
+    branch: master
 
     URI: git://git.openembedded.org/meta-openembedded
-    branch: warrior
+    branch: master
 
     URI: https://github.com/meta-qt5/meta-qt5.git
-    branch: warrior
+    branch: master
 
     URI: git://git.yoctoproject.org/meta-security.git
-    branch: warrior 
+    branch: master
 
 Latest commits:
 
-    poky 01b8a8b
-    meta-openembedded 8d5dcd6
-    meta-qt5 2a5f941
-    meta-security 4f7be0d
+    poky a76b6b3
+    meta-openembedded 1463d64
+    meta-qt5 6463bea
+    meta-security eca0151
 
 meta-odroid-c2 layer maintainer: Scott Ellis <scott@jumpnowtek.com>
