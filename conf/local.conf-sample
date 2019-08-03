@@ -2,8 +2,10 @@
 # Yocto Project 2.7 Poky distribution [warrior] branch
 # This is a sysvinit system
 
-# use local version, [warrior] version is broken for 5.1 kernels
+# use local version, [warrior] version is broken for 5.1+ kernels
 BBMASK = "meta-networking/recipes-kernel/wireguard"
+# mask our local version for testing upstream
+# BBMASK = "meta-odroid-c2/recipes-kernel/wireguard"
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
@@ -15,7 +17,7 @@ PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 
 PREFERRED_PROVIDER_udev = "eudev"
 
-# the default kernel is 5.0 
+# the default kernel is 5.2 
 #PREFERRED_VERSION_linux-stable = "4.19.%"
 
 MACHINE = "odroid-c2"
@@ -26,8 +28,8 @@ MACHINE = "odroid-c2"
 # SD_UPGRADER_BOOT = "1"
 
 #DL_DIR = "${HOME}/oe-sources"
-#SSTATE_DIR = "/oe6/oc2/sstate-cache"
-#TMPDIR = "/oe6/oc2/tmp-warrior"
+#SSTATE_DIR = "/oe4/oc2/sstate-cache"
+#TMPDIR = "/oe4/oc2/tmp-master"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
