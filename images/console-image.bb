@@ -13,7 +13,7 @@ CORE_OS = " \
     tzdata \
 "
 
-KERNEL_EXTRA_INSTALL = " \
+KERNEL_EXTRA = " \
     kernel-modules \
     u-boot-scr \
 "
@@ -24,7 +24,7 @@ WIREGUARD = " \
     wireguard-tools \
 "
 
-DEV_SDK_INSTALL = " \
+DEV_SDK = " \
     binutils \
     binutils-symlinks \
     coreutils \
@@ -48,12 +48,11 @@ DEV_SDK_INSTALL = " \
     make \
     perl-modules \
     pkgconfig \
-    python-modules \
     python3-modules \
     strace \
 "
 
-EXTRA_TOOLS_INSTALL = " \
+EXTRA_TOOLS = " \
     bzip2 \
     curl \
     dosfstools \
@@ -87,11 +86,19 @@ EXTRA_TOOLS_INSTALL = " \
     zip \
 "
 
+SECURITY_TOOLS = " \
+    checksec \
+    ncrack \
+    nikto \
+    python3-scapy \
+"
+
 IMAGE_INSTALL += " \
     ${CORE_OS} \
-    ${DEV_SDK_INSTALL} \
-    ${EXTRA_TOOLS_INSTALL} \
-    ${KERNEL_EXTRA_INSTALL} \
+    ${DEV_SDK} \
+    ${EXTRA_TOOLS} \
+    ${KERNEL_EXTRA} \
+    ${SECURITY_TOOLS} \
     ${WIREGUARD} \
 "
 

@@ -4,13 +4,8 @@ require console-image.bb
 
 AUDIT_TOOLS = " \
     buck-security \
-    checksec \
     checksecurity \
     lynis \
-    ncrack \
-    nikto \
-    oe-scap \
-    python3-scapy \
 "
 
 IMAGE_INSTALL += " \
