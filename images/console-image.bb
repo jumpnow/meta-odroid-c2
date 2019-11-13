@@ -4,6 +4,8 @@ HOMEPAGE = "http://www.jumpnowtek.com"
 IMAGE_FEATURES += "package-management"
 IMAGE_LINGUAS = "en-us"
 
+PACKAGE_EXCLUDE = " rng-tools"
+
 inherit image
 
 CORE_OS = " \
@@ -14,7 +16,9 @@ CORE_OS = " \
 "
 
 KERNEL_EXTRA = " \
+    cryptodev-module \
     kernel-modules \
+    load-modules \
     u-boot-scr \
 "
 
