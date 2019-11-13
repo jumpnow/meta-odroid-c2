@@ -11,8 +11,8 @@ This layer depends on:
 
 Latest commits:
 
-    poky 94f6b31 
-    meta-openembedded 1bfaa2e
+    poky 17c1e5f
+    meta-openembedded aad5b3d
     meta-security 27ddb45 
 
 meta-odroid-c2 layer maintainer: Scott Ellis <scott@jumpnowtek.com>
