@@ -4,8 +4,6 @@ HOMEPAGE = "http://www.jumpnowtek.com"
 IMAGE_FEATURES += "package-management"
 IMAGE_LINGUAS = "en-us"
 
-PACKAGE_EXCLUDE = " rng-tools"
-
 inherit image
 
 CORE_OS = " \
@@ -124,6 +122,10 @@ disable_bootlogd() {
     echo BOOTLOGD_ENABLE=no > ${IMAGE_ROOTFS}/etc/default/bootlogd
 }
 
+disable_rng_daemon() {
+    rm ${IMAGE_ROOTFS}/etc/rcS.d/S38rng-tools
+}
+
 create_opt_dir() {
     mkdir -p ${IMAGE_ROOTFS}/opt
 }
@@ -132,6 +134,7 @@ ROOTFS_POSTPROCESS_COMMAND += " \
     remove_blacklist_files ; \
     set_local_timezone ; \
     disable_bootlogd ; \
+    disable_rng_daemon ; \
     create_opt_dir ; \
 "
 
