@@ -14,5 +14,6 @@ BBLAYERS ?= " \
   ${HOME}/poky-zeus/meta-openembedded/meta-python \
   ${HOME}/poky-zeus/meta-security \
   ${HOME}/poky-zeus/meta-security/meta-security-compliance \
+  ${HOME}/poky-zeus/meta-jumpnow \
   ${HOME}/odroid-c2/meta-odroid-c2 \
 "
