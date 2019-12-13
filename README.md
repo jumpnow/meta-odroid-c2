@@ -17,6 +17,6 @@ Latest commits:
     poky da81542
     meta-openembedded 0d16b31
     meta-security 27ddb45
-    meta-jumpnow 4c8dc97
+    meta-jumpnow 6bc68be
 
 meta-odroid-c2 layer maintainer: Scott Ellis <scott@jumpnowtek.com>
