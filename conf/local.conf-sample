@@ -2,10 +2,14 @@
 # Yocto Project 3.0 Poky distribution [zeus] branch
 # This is a sysvinit system
 
-# use local version, mask the version in meta-openembedded
+# mask wireguard from meta-openembedded/meta-networking
+# use version in meta-jumpnow to support kernels < 5.6
+# with wireguard-linux-compat
 BBMASK = "meta-networking/recipes-kernel/wireguard"
-# mask our local version for testing upstream
-# BBMASK = "meta-odroid-c2/recipes-kernel/wireguard"
+
+# mask cryptodev from poky/meta
+# use version from meta-jumpnow to support kernels > 5.4
+BBMASK += "meta/recipes-kernel/cryptodev"
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
@@ -17,19 +21,22 @@ PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 
 PREFERRED_PROVIDER_udev = "eudev"
 
-# the default kernel is 5.4
-#PREFERRED_VERSION_linux-stable = "4.19.%"
+# the default kernel is 5.6, uncomment to change
+#PREFERRED_VERSION_linux-stable = "5.4.%"
+
+# uncomment if using kernels < 5.6
+# WIREGUARD_COMPAT = "1"
 
 MACHINE = "odroid-c2"
 
 # use eMMC instead of SD card (changes boot.scr)
 # EMMC_BOOT = "1"
 # to use the root upgrader with the SD card (changes boot.scr)
-# SD_UPGRADER_BOOT = "1"
+SD_UPGRADER_BOOT = "1"
 
-#DL_DIR = "${HOME}/oe-sources"
-#SSTATE_DIR = "/oe4/oc2/sstate-cache"
-#TMPDIR = "/oe4/oc2/tmp-zeus"
+# DL_DIR = "/src/oe"
+# SSTATE_DIR = "/oe5/oc2/sstate-cache"
+# TMPDIR = "/oe5/oc2/tmp-zeus"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
