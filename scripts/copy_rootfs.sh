@@ -23,8 +23,15 @@ else
 fi
 
 if [ -z "$OETMP" ]; then
-    echo -e "Working from local directory"
-    SRC=.
+    # echo try to find it
+    if [ -f ../../build/conf/local.conf ]; then
+        OETMP=$(grep '^TMPDIR' ../../build/conf/local.conf | awk '{ print $3 }' | sed 's/"//g')
+    fi
+fi
+
+if [ -z "$OETMP" ]; then
+    echo "Environment variable OETMP not set"
+    exit 1
 else
     echo "OETMP: $OETMP"
 
@@ -49,10 +56,10 @@ else
     TARGET_HOSTNAME=${3}
 fi
 
-echo -e "HOSTNAME: $TARGET_HOSTNAME\n"
+echo "HOSTNAME: $TARGET_HOSTNAME"
 
 if [ ! -f "${SRC}/${IMAGE}-image-${MACHINE}.tar.xz" ]; then
-    echo -e "File not found: ${SRC}/${IMAGE}-image-${MACHINE}.tar.xz\n"
+    echo "File not found: ${SRC}/${IMAGE}-image-${MACHINE}.tar.xz"
     exit 1
 fi
 

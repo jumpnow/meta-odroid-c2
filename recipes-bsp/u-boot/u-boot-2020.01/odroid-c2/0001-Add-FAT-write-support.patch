@@ -1,6 +1,6 @@
-From c341469449e324307ef0a65ea9c489a84cc36b67 Mon Sep 17 00:00:00 2001
+From 0d8873db98156d1cbeb7300f2cf3f3f8660cbe46 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
-Date: Sat, 3 Aug 2019 07:42:07 -0400
+Date: Wed, 29 Apr 2020 13:59:11 +0000
 Subject: [PATCH] Add FAT write support
 
 ---
@@ -8,14 +8,14 @@ Subject: [PATCH] Add FAT write support
  1 file changed, 1 insertion(+)
 
 diff --git a/configs/odroid-c2_defconfig b/configs/odroid-c2_defconfig
-index 8849058..142ddbd 100644
+index 1f5a52c57c..14179886f4 100644
 --- a/configs/odroid-c2_defconfig
 +++ b/configs/odroid-c2_defconfig
-@@ -39,3 +39,4 @@ CONFIG_DEBUG_UART_ANNOUNCE=y
+@@ -41,3 +41,4 @@ CONFIG_DEBUG_UART_ANNOUNCE=y
  CONFIG_DEBUG_UART_SKIP_INIT=y
  CONFIG_MESON_SERIAL=y
  CONFIG_OF_LIBFDT_OVERLAY=y
 +CONFIG_FAT_WRITE=y
 -- 
-2.7.4
+2.17.1
 
