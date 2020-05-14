@@ -4,6 +4,7 @@ HOMEPAGE = "http://www.jumpnowtek.com"
 require images/basic-dev-image.bb
 
 IMAGE_INSTALL += " \
+    firewall \
     root-upgrader \
     u-boot-scr \
     ${SECURITY_TOOLS} \
