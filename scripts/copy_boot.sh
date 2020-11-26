@@ -39,6 +39,12 @@ if [ -z "$OETMP" ]; then
     if [ -f ../../build/conf/local.conf ]; then
         OETMP=$(grep '^TMPDIR' ../../build/conf/local.conf | awk '{ print $3 }' | sed 's/"//g')
     fi
+
+    if [ -z "$OETMP" ]; then
+        if [ -d "../../build/tmp" ]; then
+            OETMP="../../build/tmp"
+        fi
+    fi
 fi
 
 if [ -z "$OETMP" ]; then
@@ -54,11 +60,6 @@ else
 
     SRC=${OETMP}/deploy/images/${MACHINE}
 fi 
-
-if [ ! -d /media/card ]; then
-    echo "Temporary mount point [/media/card] not found"
-    exit 1
-fi
 
 if [ ! -f ${SRC}/bl1.bin.hardkernel ]; then
     echo "File not found: ${SRC}/bl1.bin.hardkernel"

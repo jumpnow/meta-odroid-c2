@@ -1,4 +1,4 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 COMPATIBLE_MACHINE = "odroid-c2"
 
@@ -13,7 +13,6 @@ SRC_URI += " \
     file://odroid-c2/bl301.bin \
     file://odroid-c2/bl30.bin \
     file://odroid-c2/bl31.bin \
-    file://0001-Add-FAT-write-support.patch \
 "
 
 do_compile_append () {

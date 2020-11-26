@@ -5,9 +5,8 @@ require images/basic-dev-image.bb
 
 IMAGE_INSTALL += " \
     firewall \
-    root-upgrader \
+    systemd-analyze systemd-bash-completion \
     u-boot-scr \
-    ${SECURITY_TOOLS} \
     ${WIREGUARD} \
 "
 

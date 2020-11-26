@@ -1,23 +1,15 @@
 # Local configuration for meta-odroid-c2 images
-# Yocto Project 3.1 Poky distribution [dunfell] branch
-# This is a sysvinit system
-
-# mask wireguard from meta-openembedded/meta-networking
-# use version in meta-jumpnow to support kernels < 5.6
-# with wireguard-linux-compat
-BBMASK = "meta-networking/recipes-kernel/wireguard"
+# Yocto Project 3.2 Poky distribution [gatesgarth] branch
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-DISTRO_FEATURES = "ext2 usbhost ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES = "ext2 systemd usbhost ${DISTRO_FEATURES_LIBC}"
 
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio opengl"
+DISTRO_FEATURES_remove = "ptest"
 
-PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
+INIT_MANAGER = "systemd"
 
-PREFERRED_PROVIDER_udev = "eudev"
-
-# the default kernel is 5.8, uncomment to change
+# the default kernel is 5.9, uncomment to change
 #PREFERRED_VERSION_linux-stable = "5.4.%"
 
 # uncomment if using kernels < 5.6
@@ -28,11 +20,11 @@ MACHINE = "odroid-c2"
 # use eMMC instead of SD card (changes boot.scr)
 # EMMC_BOOT = "1"
 # to use the root upgrader with the SD card (changes boot.scr)
-SD_UPGRADER_BOOT = "1"
+# SD_UPGRADER_BOOT = "1"
 
-# DL_DIR = "/src/oe"
+# DL_DIR = "/src/gg"
 # SSTATE_DIR = "/oe5/oc2/sstate-cache"
-# TMPDIR = "/oe5/oc2/tmp-dunfell"
+# TMPDIR = "/oe5/oc2/tmp-gatesgarth"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
